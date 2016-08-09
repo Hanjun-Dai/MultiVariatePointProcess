@@ -25,7 +25,7 @@
 class PlainHawkes : public IProcess
 {
 
-protected:
+public:
 
 /**
  * \brief Beta_ is a D-by-D matrix, which stores the \f$\{\beta_{mn}\geq 0\}\f$ decaying rates of the exponential kernels. 
