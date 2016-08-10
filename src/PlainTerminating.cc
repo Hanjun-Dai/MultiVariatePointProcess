@@ -33,7 +33,7 @@ void PlainTerminating::Initialize(const std::vector<Sequence>& data)
 
 				for(std::vector<Event>::const_iterator i_event = seq.begin(); i_event != seq.end(); ++ i_event)
 				{
-					const int& j = i_event->DimentionID;
+					const int& j = i_event->DimensionID;
 					const double& j_time = i_event->time;
 
 					if(j_time < i_time)
@@ -50,7 +50,7 @@ void PlainTerminating::Initialize(const std::vector<Sequence>& data)
 			{
 				for(std::vector<Event>::const_iterator i_event = seq.begin(); i_event != seq.end(); ++ i_event)
 				{
-					const int& j = i_event->DimentionID;
+					const int& j = i_event->DimensionID;
 					const double& j_time = i_event->time;
 
 					matrixG(c, j) = data[c].GetTimeWindow() - j_time;

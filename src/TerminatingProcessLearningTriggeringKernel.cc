@@ -33,7 +33,7 @@ void TerminatingProcessLearningTriggeringKernel::Initialize(const std::vector<Se
 
 				for(std::vector<Event>::const_iterator i_event = seq.begin(); i_event != seq.end(); ++ i_event)
 				{
-					const int& j = i_event->DimentionID;
+					const int& j = i_event->DimensionID;
 					const double& j_time = i_event->time;
 
 					if(j_time < i_time)
@@ -55,7 +55,7 @@ void TerminatingProcessLearningTriggeringKernel::Initialize(const std::vector<Se
 			{
 				for(std::vector<Event>::const_iterator i_event = seq.begin(); i_event != seq.end(); ++ i_event)
 				{
-					const int& j = i_event->DimentionID;
+					const int& j = i_event->DimensionID;
 					const double& j_time = i_event->time;
 
 					double deltaT_ji = data[c].GetTimeWindow() - j_time;

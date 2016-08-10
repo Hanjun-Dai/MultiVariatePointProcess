@@ -17,7 +17,7 @@ void IProcess::InitializeDimension(const std::vector<Sequence>& data)
 
 		for(unsigned i = 0; i < seq.size(); ++ i)
 		{
-			all_timestamp_per_dimension_[c][seq[i].DimentionID].push_back(seq[i].time);
+			all_timestamp_per_dimension_[c][seq[i].DimensionID].push_back(seq[i].time);
 		}
 
 	}
@@ -73,8 +73,8 @@ void IProcess::PlotIntensityFunction(const Sequence& data)
 
 	for(std::vector<Event>::const_iterator i_event = events.begin(); i_event != events.end(); ++ i_event)
 	{
-		gp_x_point[i_event->DimentionID].push_back(i_event->time);
-		gp_y_point[i_event->DimentionID].push_back(-0.2 * (i_event->DimentionID + 1));
+		gp_x_point[i_event->DimensionID].push_back(i_event->time);
+		gp_y_point[i_event->DimensionID].push_back(-0.2 * (i_event->DimensionID + 1));
 	}
 
 	std::vector<std::string> colors = {"'dark-orange'", "'blue'", "'dark-red'", "'dark-spring-green'"};
@@ -109,7 +109,7 @@ void IProcess::PlotIntensityFunction(const Sequence& data, const unsigned& dim_i
 
 	for(std::vector<Event>::const_iterator i_event = events.begin(); i_event != events.end(); ++ i_event)
 	{
-		if(i_event->DimentionID == dim_id)
+		if(i_event->DimensionID == dim_id)
 		{
 			gp_x_point.push_back(i_event->time);
 			gp_y_point.push_back(-0.2);	

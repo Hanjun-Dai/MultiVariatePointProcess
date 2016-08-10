@@ -27,7 +27,7 @@ public:
 /**
  * 	\brief The unique ID of the dimension this event is associated with.
  */
-	int DimentionID;
+	int DimensionID;
 
 /**
  * 	\brief The time when this event occurs.

@@ -69,7 +69,7 @@ void OgataThinning::Simulate(IProcess& process, const std::vector<double>& vec_T
 				{
 					if(D <= cumprob[d])
 					{
-						event.DimentionID = d;
+						event.DimensionID = d;
 						break;
 					}
 				}
@@ -148,7 +148,7 @@ void OgataThinning::Simulate(IProcess& process, const unsigned& n, const unsigne
 				{
 					if(D <= cumprob[d])
 					{
-						event.DimentionID = d;
+						event.DimensionID = d;
 						break;
 					}
 				}
@@ -227,7 +227,7 @@ Event OgataThinning::SimulateNext(IProcess& process, const Sequence& seq)
 				{
 					if(D <= cumprob[d])
 					{
-						event.DimentionID = d;
+						event.DimensionID = d;
 						break;
 					}
 				}

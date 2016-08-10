@@ -138,7 +138,7 @@ double SelfInhibitingProcess::Intensity(const double& t, const Sequence& data, E
 		{
 			for(unsigned d = 0; d < num_dims_; ++ d)
 			{
-				intensity_dim(d) = intensity_dim(d) - Beta_(seq[i].DimentionID, d);
+				intensity_dim(d) = intensity_dim(d) - Beta_(seq[i].DimensionID, d);
 			}
 		}else
 		{
@@ -169,7 +169,7 @@ double SelfInhibitingProcess::IntensityUpperBound(const double& t, const double&
 		{
 			for(unsigned d = 0; d < num_dims_; ++ d)
 			{
-				intensity_upper_dim(d) = intensity_upper_dim(d) - Beta_(seq[i].DimentionID, d);
+				intensity_upper_dim(d) = intensity_upper_dim(d) - Beta_(seq[i].DimensionID, d);
 			}
 		}else
 		{

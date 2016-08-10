@@ -70,7 +70,7 @@ void ImportFromExistingCascades(const std::string& filename, const unsigned& num
 				Event event;
 				event.EventID = (eventID ++);
 				event.SequenceID = seqID;
-				event.DimentionID = std::atoi(parts[i].c_str());
+				event.DimensionID = std::atoi(parts[i].c_str());
 				event.time = std::atof(parts[i+1].c_str());
 				event.marker = -1;
 
@@ -112,7 +112,7 @@ void ImportFromExistingSingleSequence(const std::string& filename, Sequence& seq
         Event event;
         event.EventID = (eventID ++);
         event.SequenceID = seqID;
-        event.DimentionID = 0;
+        event.DimensionID = 0;
         event.time = atof(i_timing->c_str());
         event.marker = -1;
         seq.Add(event);
@@ -148,7 +148,7 @@ void ImportFromExistingSequences(const std::string& filename, std::vector<Sequen
             Event event;
             event.EventID = (eventID ++);
             event.SequenceID = seqID;
-            event.DimentionID = 0;
+            event.DimensionID = 0;
             event.time = (atof(i_timing->c_str()) - origin) / scale;
             event.marker = -1;
             seq.Add(event);
@@ -188,7 +188,7 @@ void ImportFromExistingUserItemSequences(const std::string& filename, const unsi
             Event event;
             event.EventID = (eventID ++);
             event.SequenceID = seqID;
-            event.DimentionID = dim_id;
+            event.DimensionID = dim_id;
             event.time = atof(i_timing->c_str());
             event.marker = -1;
             seq.Add(event);

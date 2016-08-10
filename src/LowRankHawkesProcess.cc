@@ -51,7 +51,7 @@ void LowRankHawkesProcess::Initialize(const std::vector<Sequence>& data)
 	for(unsigned c = 0; c < num_total_pairs; ++ c)
 	{
 		const std::vector<Event>& seq = data[c].GetEvents();
-		unsigned dimID = seq[0].DimentionID;
+		unsigned dimID = seq[0].DimensionID;
 
 		observed_idx_(c) = dimID;
 
@@ -199,7 +199,7 @@ double LowRankHawkesProcess::PredictNextEventTime(unsigned uid, unsigned itemid,
 	for(unsigned c = 0; c < data.size(); ++ c)
 	{
 		const std::vector<Event>& seq = data[c].GetEvents();
-		unsigned dimID = seq[0].DimentionID;
+		unsigned dimID = seq[0].DimensionID;
 		Ind2Vec(dimID, i, j);
 
 		if((i == uid) && (j == itemid))
@@ -224,7 +224,7 @@ unsigned LowRankHawkesProcess::PredictNextItem(unsigned uid, double t, const std
 	for(unsigned c = 0; c < data.size(); ++ c)
 	{
 		const std::vector<Event>& seq = data[c].GetEvents();
-		unsigned dimID = seq[0].DimentionID;
+		unsigned dimID = seq[0].DimensionID;
 		Ind2Vec(dimID, i, j);
 
 		if(i == uid)

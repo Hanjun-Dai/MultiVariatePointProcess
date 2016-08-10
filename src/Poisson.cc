@@ -43,8 +43,8 @@ void Poisson::Initialize(const std::vector<Sequence>& data)
 
 		for(unsigned i = 0; i < seq.size(); ++ i)
 		{
-			++ event_number_by_dim(seq[i].DimentionID);
-			// all_timestamp_per_dimension_[c][seq[i].DimentionID].push_back(seq[i].time);
+			++ event_number_by_dim(seq[i].DimensionID);
+			// all_timestamp_per_dimension_[c][seq[i].DimensionID].push_back(seq[i].time);
 		}
 
 		intensity_itegral_features_ += data[c].GetTimeWindow();

@@ -38,12 +38,12 @@ int main(const int argc, const char** argv)
 		const std::vector<Event>& seq = data[c].GetEvents();
 		for(std::vector<Event>::const_iterator i_event = seq.begin(); i_event != seq.end(); ++ i_event)
 		{
-			if(dim2count.find(i_event -> DimentionID) == dim2count.end())
+			if(dim2count.find(i_event -> DimensionID) == dim2count.end())
 			{
-				dim2count[i_event -> DimentionID] = 1;
+				dim2count[i_event -> DimensionID] = 1;
 			}else
 			{
-				++ dim2count[i_event -> DimentionID];
+				++ dim2count[i_event -> DimensionID];
 			}
 		}
 

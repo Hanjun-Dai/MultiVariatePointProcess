@@ -214,7 +214,7 @@ double HawkesGeneralKernel::Intensity(const double& t, const Sequence& data, Eig
 		{
 			for(unsigned d = 0; d < num_dims_; ++ d)
 			{
-				intensity_dim(d) += Alpha_(seq[i].DimentionID, d) * (*triggeringkernels_[seq[i].DimentionID][d])(t - seq[i].time);
+				intensity_dim(d) += Alpha_(seq[i].DimensionID, d) * (*triggeringkernels_[seq[i].DimensionID][d])(t - seq[i].time);
 			}	
 		}
 		else
@@ -249,7 +249,7 @@ double HawkesGeneralKernel::IntensityUpperBound(const double& t, const double& L
 		{
 			for(unsigned d = 0; d < num_dims_; ++ d)
 			{
-				intensity_upper_dim(d) += Alpha_(seq[i].DimentionID, d) * (*triggeringkernels_[seq[i].DimentionID][d])(t - seq[i].time);
+				intensity_upper_dim(d) += Alpha_(seq[i].DimensionID, d) * (*triggeringkernels_[seq[i].DimensionID][d])(t - seq[i].time);
 			}	
 		}
 		else

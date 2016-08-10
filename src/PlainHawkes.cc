@@ -30,7 +30,7 @@ void PlainHawkes::Initialize(const std::vector<Sequence>& data)
 
 	// 	for(unsigned i = 0; i < seq.size(); ++ i)
 	// 	{
-	// 		all_timestamp_per_dimension_[c][seq[i].DimentionID].push_back(seq[i].time);
+	// 		all_timestamp_per_dimension_[c][seq[i].DimensionID].push_back(seq[i].time);
 	// 	}
 
 	// }
@@ -130,7 +130,7 @@ double PlainHawkes::Intensity(const double& t, const Sequence& data, Eigen::Vect
 		{
 			for(unsigned d = 0; d < num_dims_; ++ d)
 			{
-				intensity_dim(d) += Alpha_(seq[i].DimentionID, d) * exp(-Beta_(seq[i].DimentionID, d) * (t - seq[i].time));
+				intensity_dim(d) += Alpha_(seq[i].DimensionID, d) * exp(-Beta_(seq[i].DimensionID, d) * (t - seq[i].time));
 			}	
 		}
 		else
@@ -165,7 +165,7 @@ double PlainHawkes::IntensityUpperBound(const double& t, const double& L, const 
 		{
 			for(unsigned d = 0; d < num_dims_; ++ d)
 			{
-				intensity_upper_dim(d) += Alpha_(seq[i].DimentionID, d) * exp(-Beta_(seq[i].DimentionID, d) * (t - seq[i].time));
+				intensity_upper_dim(d) += Alpha_(seq[i].DimensionID, d) * exp(-Beta_(seq[i].DimensionID, d) * (t - seq[i].time));
 			}	
 		}
 		else
@@ -555,16 +555,16 @@ void PlainHawkes::Simulate(const std::vector<double>& vec_T, std::vector<Sequenc
 			Event event;
 			event.EventID = eventID;
 			event.SequenceID = sequenceID;
-			event.DimentionID = AssignDim(Lambda0_);
+			event.DimensionID = AssignDim(Lambda0_);
 			event.time = t;
 			event.marker = 0;
 			seq.Add(event);
 
-			last_event_per_dim(event.DimentionID) = t;			
+			last_event_per_dim(event.DimensionID) = t;			
 
 			++ eventID;
 
-			unsigned last_event_dim = event.DimentionID;
+			unsigned last_event_dim = event.DimensionID;
 
 			while(t < *i_vec_T)
 			{
@@ -596,8 +596,8 @@ void PlainHawkes::Simulate(const std::vector<double>& vec_T, std::vector<Sequenc
 						Event event;
 						event.EventID = eventID;
 						event.SequenceID = sequenceID;
-						event.DimentionID = AssignDim(intensity_dim);
-						last_event_dim = event.DimentionID;
+						event.DimensionID = AssignDim(intensity_dim);
+						last_event_dim = event.DimensionID;
 
 						if(last_event_per_dim(last_event_dim) > 0)
 						{
@@ -605,7 +605,7 @@ void PlainHawkes::Simulate(const std::vector<double>& vec_T, std::vector<Sequenc
 						}
 						
 						event.time = t;
-						last_event_per_dim(event.DimentionID) = t;	
+						last_event_per_dim(event.DimensionID) = t;	
 
 						event.marker = 0;
 						seq.Add(event);
@@ -653,16 +653,16 @@ void PlainHawkes::Simulate(const unsigned& n, const unsigned& num_sequences, std
 		Event event;
 		event.EventID = eventID;
 		event.SequenceID = sequenceID;
-		event.DimentionID = AssignDim(Lambda0_);
+		event.DimensionID = AssignDim(Lambda0_);
 		event.time = t;
 		event.marker = 0;
 		seq.Add(event);
 
-		last_event_per_dim(event.DimentionID) = t;			
+		last_event_per_dim(event.DimensionID) = t;			
 
 		++ eventID;
 
-		unsigned last_event_dim = event.DimentionID;
+		unsigned last_event_dim = event.DimensionID;
 
 		while(eventID <= n)
 		{
@@ -691,8 +691,8 @@ void PlainHawkes::Simulate(const unsigned& n, const unsigned& num_sequences, std
 					Event event;
 					event.EventID = eventID;
 					event.SequenceID = sequenceID;
-					event.DimentionID = AssignDim(intensity_dim);
-					last_event_dim = event.DimentionID;
+					event.DimensionID = AssignDim(intensity_dim);
+					last_event_dim = event.DimensionID;
 
 					if(last_event_per_dim(last_event_dim) > 0)
 					{
@@ -700,7 +700,7 @@ void PlainHawkes::Simulate(const unsigned& n, const unsigned& num_sequences, std
 					}
 					
 					event.time = t;
-					last_event_per_dim(event.DimentionID) = t;	
+					last_event_per_dim(event.DimensionID) = t;	
 
 					event.marker = 0;
 					seq.Add(event);
